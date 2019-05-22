@@ -24,34 +24,29 @@ getData()
   })
   .then(listArr => {
     namesList.innerHTML = listArr.join("");
+    console.log(namesList.innerHTML);
     return namesList;
-   })
+  })
   .catch(err => {
     console.error(err);
   });
 console.log(fullNamesList);
 
-async function ListData (){
-    const data = await getData();
-for(let i = 0; i<fullNamesList.length;i++){
-    fullNamesList[i].addEventListener('click',()=>{
-        if(fullNamesList[i].innerText === )
-    })
+async function addEL() {
+  const data = await getData();
+  for (let i = 0; i < fullNamesList.length; i++) {
+    fullNamesList[i].addEventListener("click", () => {
+      data.map(obj => {
+        if (fullNamesList[i].innerText === obj.name) {
+            console.log(obj);
+          resultsDiv.innerText = Object.entries(obj).map(vals =>{
+              return vals.join("");
+          });
+          console.log(typeof resultsDiv.innerText);
+        }
+      });
+    });
+  }
+  return fullNamesList;
 }
-}
-
-
-
-
-
-// fullNamesList.addEventListener("click",()=>{
-
-// })
-
-// function logData(cb){
-//     for(let i = 0;i<fullNamesList.length;i++){
-//         fullNamesList[i].addEventListener("click",()=>{
-// if(fullNamesList[i].innerHTML === cb().names)
-//         });
-//     }
-// }
+addEL();
