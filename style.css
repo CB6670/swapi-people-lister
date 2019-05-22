@@ -1,0 +1,14 @@
+#bodyDiv{
+    display:flex;
+    flex-wrap: wrap;
+}
+#left{
+    display:flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+#right{
+    display:flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
